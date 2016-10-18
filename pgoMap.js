@@ -1,14 +1,19 @@
-var map;
-  function loadMapScenario() {
-      map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
+var map_manager = {
+     "map" : null,
+     "map_items" : []
+}
+
+
+function loadMapScenario() {
+    map_manager.map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
           credentials: 'AjCftuylaha9iD3UV9n2Gwa4DLAzWGoTfDKnqNZJVZzgn4A593v7T7WqWwNDXJYu'
-      });
-      add_pokemon_layer();
-  } 
+    });
+    add_pokemon_layer();
+} 
   
   
 //1. Define pokemon data format, create pokemon data
-map_items = [
+map_manager.map_items = [
     {
     "pokemon_id" : 10,
     "expire" : 1476822926,
@@ -47,6 +52,18 @@ function add_pokemon_layer(){
 
 
 //3. Countdown refresh
+function refresh_pokemon_layer(){
+  //create new layer
+  var pokemon_layer = get_pokemon_layer(map_items)
+  //remove previous layer
+  map.layers.clear()
+  //add new layer
+  map.layers.insert(pokemon_layer);
+}
+
+}
+
+//4. Connect with REST api
 
 
-//4. Connect with rest api
+window.setIntervel(refresh_pokemon_layer, 1000)

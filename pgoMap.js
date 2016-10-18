@@ -46,7 +46,7 @@ function get_pokemon_layer(map_items){
 }
 
 function add_pokemon_layer(){
-    var pokemon_layer = get_pokemon_layer(mapmanager.map_item)
+    var pokemon_layer = get_pokemon_layer(map_manager.map_item)
     map.layers.insert(pokemon_layer);
 }
 
@@ -54,7 +54,7 @@ function add_pokemon_layer(){
 //3. Countdown refresh
 function refresh_pokemon_layer(){
   //create new layer
-  var pokemon_layer = get_pokemon_layer(mapmanager.map_item)
+  var pokemon_layer = get_pokemon_layer(map_manager.map_item)
   //remove previous layer
   map.layers.clear()
   //add new layer

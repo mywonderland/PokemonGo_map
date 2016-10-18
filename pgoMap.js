@@ -36,9 +36,9 @@ function get_pokemon_layer(map_items){
      var layer = new Microsoft.Maps.Layer();
      for(var i in map_items){
         var map_item = map_items[i];
-        var pushpin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(map_item["latitude"], map_item["longitude"]), 
-                                                 { icon: 'images/pushpin_images/pokemon/' + map_item['pokemon_id'] +'.png',
-                                                   title: get_count_down_time(map_item['expire'])});
+        var pushpin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(map_items["latitude"], map_items["longitude"]), 
+                                                 { icon: 'images/pushpin_images/pokemon/' + map_items['pokemon_id'] +'.png',
+                                                   title: get_count_down_time(map_items['expire'])});
        pushpins.push(pushpin);
      } 
      layer.add(pushpins);
@@ -46,7 +46,7 @@ function get_pokemon_layer(map_items){
 }
 
 function add_pokemon_layer(){
-    var pokemon_layer = get_pokemon_layer(map_manager.map_item)
+    var pokemon_layer = get_pokemon_layer(map_manager.map_items)
     map_manager.map.layers.insert(pokemon_layer);
 }
 
@@ -54,7 +54,7 @@ function add_pokemon_layer(){
 //3. Countdown refresh
 function refresh_pokemon_layer(){
   //create new layer
-  var pokemon_layer = get_pokemon_layer(map_manager.map_item)
+  var pokemon_layer = get_pokemon_layer(map_manager.map_items)
   //remove previous layer
   map_manager.map.layers.clear()
   //add new layer

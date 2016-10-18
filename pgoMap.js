@@ -19,8 +19,13 @@ map_items = [
 
 //2. Create pokemon image on map
 function get_pokemon_layer(map_items){
-     var pushpins = Microsoft.Maps.TestDataGenerator.getPushpins(10, map.getBounds());
+     var pushpins = []
      var layer = new Microsoft.Maps.Layer();
+     for(var i in map_items){
+        var map_item = map_items[i];
+        var pushpin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(map_item["latitude"], map_item["longitude"]), { icon: 'https://www.bingmapsportal.com/Content/images/poi_custom.png'});
+       pushpins.add(pushpin);
+     } 
      layer.add(pushpins);
      return layer;
 }

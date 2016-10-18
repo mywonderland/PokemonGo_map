@@ -6,10 +6,33 @@ var map;
   } 
   
   
-# 1. Define pokemon data format, create pokemon data
+//1. Define pokemon data format, create pokemon data
+map_items = {
+  {
+    "pokemon_id" : 10,
+    "expire" : 123456778,
+    "longitude" : -74.4701474,
+    "latitude" : 40.52093,
+}
+
+//2. Create pokemon image on map
+function get_pokemon_layer(map_items){
+     var layer = new Microsoft.Maps.Layer();
+     return layer;
+}
+
+function add_pokemon_layer(){
+    var pokemon_layer = get_pokemon_layer(map_items)
+    map.layers.insert(pokemon_layer);
+}
+
+var pushpins = Microsoft.Maps.TestDataGenerator.getPushpins(10, map.getBounds());
+var layer = new Microsoft.Maps.Layer();
+layer.add(pushpins);
+map.layers.insert(layer);
 
 
-# 2. Create pokemon image on map
+//3. Countdown refresh
 
 
-# 3. Countdown refresh
+//4. Connect with rest api

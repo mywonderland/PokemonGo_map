@@ -36,9 +36,9 @@ function get_pokemon_layer(map_items){
      var layer = new Microsoft.Maps.Layer();
      for(var i in map_items){
         var map_item = map_items[i];
-        var pushpin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(map_items["latitude"], map_items["longitude"]), 
-                                                 { icon: 'images/pushpin_images/pokemon/' + map_items['pokemon_id'] +'.png',
-                                                   title: get_count_down_time(map_items['expire'])});
+        var pushpin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(map_item["latitude"], map_item["longitude"]), 
+                                                 { icon: 'images/pushpin_images/pokemon/' + map_item['pokemon_id'] +'.png',
+                                                   title: get_count_down_time(map_item['expire'])});
        pushpins.push(pushpin);
      } 
      layer.add(pushpins);

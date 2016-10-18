@@ -66,4 +66,4 @@ function refresh_pokemon_layer(){
 //4. Connect with REST api
 
 
-window.setIntervel(refresh_pokemon_layer, 1000)
+window.setInterval(refresh_pokemon_layer, 1000)

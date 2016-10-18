@@ -61,8 +61,6 @@ function refresh_pokemon_layer(){
   map.layers.insert(pokemon_layer);
 }
 
-}
-
 //4. Connect with REST api
 
 

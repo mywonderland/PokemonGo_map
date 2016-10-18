@@ -14,6 +14,7 @@ map_items = {
     "expire" : 123456778,
     "longitude" : -74.4701474,
     "latitude" : 40.52093,
+  }
 }
 
 //2. Create pokemon image on map

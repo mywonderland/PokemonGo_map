@@ -8,14 +8,14 @@ var map;
   
   
 //1. Define pokemon data format, create pokemon data
-map_items = {
+map_items = [
   {
     "pokemon_id" : 10,
     "expire" : 123456778,
     "longitude" : -74.4701474,
     "latitude" : 40.52093,
   }
-}
+]
 
 //2. Create pokemon image on map
 function get_pokemon_layer(map_items){

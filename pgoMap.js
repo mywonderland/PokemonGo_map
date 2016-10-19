@@ -24,7 +24,7 @@ map_manager.map_items = [
 
 function get_count_down_time(epoch){
     var now_time = new Date().getTime() / 1000;
-    var cd_time = epoch - now_time;
+    var cd_time = epoch /1000 - now_time;
     var second = Math.floor(cd_time % 60);
     var minute = Math.floor(cd_time /60);
     return minute + ":" + second;  

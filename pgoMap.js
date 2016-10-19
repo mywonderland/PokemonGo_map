@@ -83,7 +83,7 @@ function refresh_pokemon_data(){
     //If there are any unmodeled query parameters or headers that need to be sent with the request you can add them here
      };
 
-     apigClient.mapPokemonGet(params, body, additionalParams)
+     apigClient.mapPokemonsGet(params, body, additionalParams)
          .then(function(result){
              //This is where you would put a success callback
              map_manager.map_items = result.data;

@@ -13,14 +13,15 @@ function loadMapScenario() {
   
   
 //1. Define pokemon data format, create pokemon data
-map_manager.map_items = [
-    {
-    "pokemon_id" : 10,
-    "expire" : 1476822926,
-    "longitude" : -73.98433441173266,
-    "latitude" : 40.75856692300908,
-    }
-]
+
+//map_manager.map_items = [
+  //  {
+    //"pokemon_id" : 10,
+    //"expire" : 1476822926,
+    //"longitude" : -73.98433441173266,
+    //"latitude" : 40.75856692300908,
+    //}
+//]
 
 function get_count_down_time(epoch){
     var now_time = new Date().getTime() / 1000;
